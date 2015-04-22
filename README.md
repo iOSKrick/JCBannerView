@@ -7,9 +7,7 @@
 
 supports automatic rolling and click event.
 
-<br/>
-<img width="320" src="./ScreenShot.png">  
-<br/>
+<img width="320" src="./ScreenShot.png"> 
 
 ## Installation
 
