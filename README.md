@@ -7,7 +7,9 @@
 
 supports automatic rolling and click event.
 
-{% img left http://7x00ed.com1.z0.glb.clouddn.com/JCBannerView_ScreenShot.png 320 568 "" "" %}
+<br/>
+<img width="320" src="./ScreenShot.png">  
+<br/>
 
 ## Installation
 
