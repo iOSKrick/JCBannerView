@@ -11,7 +11,7 @@ supports automatic rolling and click event.
 
 ## Installation
 
-pod "JCBannerView", "0.0.1"
+pod "JCBannerView"
 
 ## Usage
 
