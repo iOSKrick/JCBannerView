@@ -1,5 +1,5 @@
 PODS:
-  - JCBannerView (0.0.1):
+  - JCBannerView (0.0.2):
     - SDWebImage (= 3.7.2)
   - SDWebImage (3.7.2):
     - SDWebImage/Core (= 3.7.2)
@@ -13,7 +13,7 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  JCBannerView: ee613872247b77384c67a85e3a761fec3630eb2f
+  JCBannerView: 37062eb6e83bda9f2a31c01b3ca0c65ed4295514
   SDWebImage: 71b7cdc1d1721d6a82ed62889030225f2c249e29
 
 COCOAPODS: 0.36.0
