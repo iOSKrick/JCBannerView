@@ -22,7 +22,7 @@
 		6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
-		E111CABB81ED0D8DBC017A5B /* libPods-JCBannerView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FD0866C8CD3F60FDF55C2C8B /* libPods-JCBannerView.a */; };
+		A0C3DA7760862F9979503D26 /* libPods-JCBannerView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FD0866C8CD3F60FDF55C2C8B /* libPods-JCBannerView.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,7 +75,7 @@
 				6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */,
 				6003F592195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F58E195388D20070C39A /* Foundation.framework in Frameworks */,
-				E111CABB81ED0D8DBC017A5B /* libPods-JCBannerView.a in Frameworks */,
+				A0C3DA7760862F9979503D26 /* libPods-JCBannerView.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

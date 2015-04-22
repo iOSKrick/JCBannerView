@@ -23,7 +23,7 @@
 @implementation JCBannerView
 
 - (id)initWithFrame:(CGRect)frame
-{   
+{
     if (self = [super initWithFrame:frame]) {
         [self setup];
     }
@@ -44,7 +44,10 @@
 {
     [super layoutSubviews];
     
-    [self startPlay];
+    self.collectionView.frame = self.bounds;
+    self.pageControl.frame = CGRectMake(0, self.bounds.size.height-kPageControlHeight, self.bounds.size.width, kPageControlHeight);
+    
+    [self reloadData];
 }
 
 - (void)dealloc
@@ -60,6 +63,11 @@
     self.pageControl.numberOfPages = self.items.count;
     
     return self.items.count;
+}
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    return self.bounds.size;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
@@ -101,6 +109,8 @@
 - (void)reloadData
 {
     [self.collectionView reloadData];
+    
+    [self startPlay];
 }
 
 #pragma mark - private
@@ -115,7 +125,6 @@
     layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
     layout.minimumLineSpacing = 0;
     layout.minimumInteritemSpacing = 0;
-    layout.itemSize = self.bounds.size;
     
     self.collectionView = [[UICollectionView alloc] initWithFrame:self.bounds collectionViewLayout:layout];
     self.collectionView.delegate = self;
