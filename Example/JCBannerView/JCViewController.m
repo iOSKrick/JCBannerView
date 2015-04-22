@@ -2,7 +2,7 @@
 //  JCViewController.m
 //  JCBannerView
 //
-//  Created by lijingcheng on 04/21/2015.
+//  Created by lijingcheng on 04/22/2015.
 //  Copyright (c) 2014 lijingcheng. All rights reserved.
 //
 
@@ -25,8 +25,8 @@
                    @{@"id": @"1", @"image": @"http://7x00ed.com1.z0.glb.clouddn.com/avatar.png", @"url": @"http://lijingcheng.github.io/"},
                    @{@"id": @"2", @"image": @"http://7x00ed.com1.z0.glb.clouddn.com/cocoapods.png", @"url": @"http://lijingcheng.github.io/"},
                    @{@"id": @"3", @"image": @"http://7x00ed.com1.z0.glb.clouddn.com/github-octopress.png", @"url": @"http://lijingcheng.github.io/"}
-                  ];
- 
+                   ];
+    
     UICollectionViewFlowLayout *layout = (UICollectionViewFlowLayout *)self.collectionViewLayout;
     layout.headerReferenceSize = CGSizeMake(self.collectionView.frame.size.width, 150);
     

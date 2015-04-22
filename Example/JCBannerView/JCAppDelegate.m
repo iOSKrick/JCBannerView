@@ -2,7 +2,7 @@
 //  JCAppDelegate.m
 //  JCBannerView
 //
-//  Created by CocoaPods on 04/21/2015.
+//  Created by CocoaPods on 04/22/2015.
 //  Copyright (c) 2014 lijingcheng. All rights reserved.
 //
 
