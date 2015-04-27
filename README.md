@@ -5,7 +5,7 @@
 [![License](https://img.shields.io/cocoapods/l/JCBannerView.svg?style=flat)](http://cocoapods.org/pods/JCBannerView)
 [![Platform](https://img.shields.io/cocoapods/p/JCBannerView.svg?style=flat)](http://cocoapods.org/pods/JCBannerView)
 
-supports automatic rolling and click event.
+Supports automatic rolling and click event.
 
 <img width="320" src="./ScreenShot.png"> 
 

@@ -10,7 +10,7 @@
 Pod::Spec.new do |s|
   s.name             = "JCBannerView"
   s.version          = "0.0.3"
-  s.summary          = "supports automatic rolling and click event."
+  s.summary          = "Supports automatic rolling and click event."
   s.homepage         = "http://lijingcheng.github.io/"
   # s.screenshots     = "http://7x00ed.com1.z0.glb.clouddn.com/JCBannerView_ScreenShot.png"
   s.license          = 'MIT'
