@@ -1,6 +1,6 @@
 //
 //  JCBannerCell.m
-//  Pods
+//  JCBannerView
 //
 //  Created by 李京城 on 15/4/21.
 //  Copyright (c) 2015年 李京城. All rights reserved.
