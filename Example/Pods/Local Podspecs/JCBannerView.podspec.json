@@ -1,7 +1,7 @@
 {
   "name": "JCBannerView",
-  "version": "0.0.2",
-  "summary": "supports automatic rolling and click event.",
+  "version": "0.0.3",
+  "summary": "Supports automatic rolling and click event.",
   "homepage": "http://lijingcheng.github.io/",
   "license": "MIT",
   "authors": {
@@ -9,7 +9,7 @@
   },
   "source": {
     "git": "https://github.com/lijingcheng/JCBannerView.git",
-    "tag": "0.0.2"
+    "tag": "0.0.3"
   },
   "social_media_url": "http://weibo.com/lijingcheng1984",
   "requires_arc": true,
@@ -25,6 +25,9 @@
   "dependencies": {
     "SDWebImage": [
       "3.7.2"
+    ],
+    "Masonry": [
+      "0.6.1"
     ]
   }
 }

@@ -8,8 +8,7 @@
 
 #import "JCBannerView.h"
 #import "JCBannerCell.h"
-
-#define kPageControlHeight 30.0f
+#import "Masonry.h"
 
 @interface JCBannerView ()<UICollectionViewDelegate, UICollectionViewDataSource>
 
@@ -45,7 +44,19 @@
     [super layoutSubviews];
     
     self.collectionView.frame = self.bounds;
-    self.pageControl.frame = CGRectMake(0, self.bounds.size.height-kPageControlHeight, self.bounds.size.width, kPageControlHeight);
+    
+    [self.pageControl mas_makeConstraints:^(MASConstraintMaker *make) {
+        if (self.hideTitleLabel) {
+            make.centerX.equalTo(self);
+        }
+        else {
+            make.right.equalTo(self).with.offset(0);
+        }
+        
+        make.bottom.equalTo(self).offset(0);
+        make.width.mas_equalTo(80);
+        make.height.mas_equalTo(30);
+    }];
     
     [self reloadData];
 }
@@ -73,7 +84,8 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     JCBannerCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([JCBannerCell class]) forIndexPath:indexPath];
-    [cell fill:self.items[indexPath.item]];
+    cell.titleLabel.hidden = self.hideTitleLabel;
+    cell.data = self.items[indexPath.item];
     
     return cell;
 }
@@ -118,6 +130,7 @@
 - (void)setup
 {
     self.items = @[];
+    self.hideTitleLabel = YES;
     self.autoresizingMask = UIViewAutoresizingFlexibleWidth;
     
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
@@ -137,7 +150,7 @@
     [self.collectionView registerClass:[JCBannerCell class] forCellWithReuseIdentifier:NSStringFromClass([JCBannerCell class])];
     [self addSubview:self.collectionView];
     
-    self.pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(0, self.bounds.size.height-kPageControlHeight, self.bounds.size.width, kPageControlHeight)];
+    self.pageControl = [[UIPageControl alloc] initWithFrame:CGRectZero];
     self.pageControl.hidesForSinglePage = YES;
     self.pageControl.userInteractionEnabled = NO;
     self.pageControl.pageIndicatorTintColor = [UIColor lightGrayColor];

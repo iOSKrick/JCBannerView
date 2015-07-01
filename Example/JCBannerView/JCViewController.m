@@ -22,13 +22,13 @@
     [super viewDidLoad];
     
     self.datas = @[
-                   @{@"id": @"1", @"image": @"http://7x00ed.com1.z0.glb.clouddn.com/avatar.png", @"url": @"http://lijingcheng.github.io/"},
-                   @{@"id": @"2", @"image": @"http://7x00ed.com1.z0.glb.clouddn.com/cocoapods.png", @"url": @"http://lijingcheng.github.io/"},
-                   @{@"id": @"3", @"image": @"http://7x00ed.com1.z0.glb.clouddn.com/github-octopress.png", @"url": @"http://lijingcheng.github.io/"}
+                   @{@"id": @"1", @"title": @"Facebook开源Nuclide项目", @"image": @"http://7x00ed.com1.z0.glb.clouddn.com/avatar.png", @"url": @"http://lijingcheng.github.io/"},
+                   @{@"id": @"2", @"title": @"Facebook应用Moments使用C++实现跨平台代码共享", @"image": @"http://7x00ed.com1.z0.glb.clouddn.com/cocoapods.png", @"url": @"http://lijingcheng.github.io/"},
+                   @{@"id": @"3", @"title": @"密码管理器LastPass遭到黑客攻击", @"image": @"http://7x00ed.com1.z0.glb.clouddn.com/github-octopress.png", @"url": @"http://lijingcheng.github.io/"}
                    ];
     
     UICollectionViewFlowLayout *layout = (UICollectionViewFlowLayout *)self.collectionViewLayout;
-    layout.headerReferenceSize = CGSizeMake(self.collectionView.frame.size.width, 150);
+    layout.headerReferenceSize = CGSizeMake(self.collectionView.frame.size.width, 180);
     
     [self.collectionView registerClass:[JCBannerView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:NSStringFromClass([JCBannerView class])];
 }
@@ -54,6 +54,7 @@
 {
     if([kind isEqual:UICollectionElementKindSectionHeader]) {
         JCBannerView *bannerView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:NSStringFromClass([JCBannerView class]) forIndexPath:indexPath];
+        bannerView.hideTitleLabel = NO;
         bannerView.autoPlayingInterval = 3;
         bannerView.items = self.datas;
         [bannerView setCompletionBlockWithSeleted:^(NSDictionary *data) {

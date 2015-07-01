@@ -12,26 +12,13 @@ typedef void (^JCBannerViewBlock)(NSDictionary *data);
 
 @interface JCBannerView : UICollectionReusableView
 
-/**
- *  Banner需要的数据
- */
 @property (nonatomic, copy) NSArray *items;
 
-/**
- *  需要Banner自动轮播的话需要设置此属性，默认值为0，不轮播
- */
-@property (nonatomic, assign) NSInteger autoPlayingInterval;
+@property (nonatomic, assign) BOOL hideTitleLabel; //default YES
+@property (nonatomic, assign) NSInteger autoPlayingInterval; //default 0
 
-/**
- *  更新数据后，用此方法刷新Banner
- */
 - (void)reloadData;
 
-/**
- *  当点击Banner上的图片时，用此方法进行回调
- *
- *  @param completionBlock 用于传递参数
- */
 - (void)setCompletionBlockWithSeleted:(JCBannerViewBlock)completionBlock;
 
 @end

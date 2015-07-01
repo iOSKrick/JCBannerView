@@ -10,13 +10,9 @@
 
 @interface JCBannerCell : UICollectionViewCell
 
-/**
- *  填充Cell
- *
- *  @param data 用于填充Cell的数据
- *
- *  @warning 参数必需包含以"image"为key的字典项，value为图片URL
- */
-- (void)fill:(NSDictionary *)data;
+@property (nonatomic, strong) UILabel *titleLabel;
+@property (nonatomic, strong) UIImageView *imageView;
+
+@property (nonatomic, copy) NSDictionary *data;
 
 @end
