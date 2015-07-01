@@ -14,8 +14,8 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "4665072158279506EF7F354C"
-               BuildableName = "libPods-JCBannerView-JCBannerView.a"
+               BlueprintIdentifier = "9ED1E1FD9B3F260F1FCFA990"
+               BuildableName = "JCBannerView.bundle"
                BlueprintName = "Pods-JCBannerView-JCBannerView"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>

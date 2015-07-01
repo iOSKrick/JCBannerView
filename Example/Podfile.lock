@@ -1,5 +1,5 @@
 PODS:
-  - JCBannerView (0.0.3):
+  - JCBannerView (0.0.4):
     - Masonry (= 0.6.1)
     - SDWebImage (= 3.7.2)
   - Masonry (0.6.1)
@@ -15,7 +15,7 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  JCBannerView: fdd7fabc36f731e05fa1da2449517e76e1190875
+  JCBannerView: 51c99c1167438e20bba5da0643a7b287c75edfb0
   Masonry: 4972309f2f134de9dd312f4dc4a21359b50e6caa
   SDWebImage: 71b7cdc1d1721d6a82ed62889030225f2c249e29
 
