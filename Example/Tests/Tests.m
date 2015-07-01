@@ -1,6 +1,6 @@
 //
-//  JCBannerView_Tests.m
-//  JCBannerView Tests
+//  Tests.m
+//  Tests
 //
 //  Created by 李京城 on 15/7/1.
 //  Copyright (c) 2015年 lijingcheng. All rights reserved.
@@ -9,11 +9,11 @@
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
 
-@interface JCBannerView_Tests : XCTestCase
+@interface Tests : XCTestCase
 
 @end
 
-@implementation JCBannerView_Tests
+@implementation Tests
 
 - (void)setUp {
     [super setUp];
@@ -28,6 +28,13 @@
 - (void)testExample {
     // This is an example of a functional test case.
     XCTAssert(YES, @"Pass");
+}
+
+- (void)testPerformanceExample {
+    // This is an example of a performance test case.
+    [self measureBlock:^{
+        // Put the code you want to measure the time of here.
+    }];
 }
 
 @end
