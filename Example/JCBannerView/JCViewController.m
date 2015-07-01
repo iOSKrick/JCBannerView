@@ -58,7 +58,7 @@
         bannerView.autoPlayingInterval = 3;
         bannerView.items = self.datas;
         [bannerView setCompletionBlockWithSeleted:^(NSDictionary *data) {
-            NSLog(@"%@",data);
+            NSLog(@"%@", data);
         }];
         
         return bannerView;
