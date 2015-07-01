@@ -1,9 +1,3 @@
 source 'https://github.com/CocoaPods/Specs.git'
 
-target 'JCBannerView', :exclusive => true do
-  pod "JCBannerView", :path => "../"
-end
-
-target 'Tests', :exclusive => true do
-    pod "JCBannerView", :path => "../"
-end
+pod "JCBannerView", :path => "../"
