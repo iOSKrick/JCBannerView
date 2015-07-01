@@ -18,7 +18,18 @@
 		6003F5A9195388D20070C39A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5A8195388D20070C39A /* Images.xcassets */; };
 		A0C3DA7760862F9979503D26 /* libPods-JCBannerView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FD0866C8CD3F60FDF55C2C8B /* libPods-JCBannerView.a */; };
 		D5191810B8B754FF2F9A4AE3 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7414C8BD7C0360CEB5FA79B7 /* libPods.a */; };
+		F32908B41B43CB9B0018164E /* JCBannerView_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = F32908B31B43CB9B0018164E /* JCBannerView_Tests.m */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F32908B51B43CB9B0018164E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6003F582195388D10070C39A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6003F589195388D20070C39A;
+			remoteInfo = JCBannerView;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		0137E379540972DC2B3D6101 /* libPods-Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -43,6 +54,9 @@
 		81DC965C33EAF18FF119C200 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		C36F86C1E7D61F3D1FA71FD9 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		DF5BE25F1C19D2E71C05F395 /* JCBannerView.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = JCBannerView.podspec; path = ../JCBannerView.podspec; sourceTree = "<group>"; };
+		F32908AF1B43CB9B0018164E /* JCBannerView Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "JCBannerView Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F32908B21B43CB9B0018164E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F32908B31B43CB9B0018164E /* JCBannerView_Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JCBannerView_Tests.m; sourceTree = "<group>"; };
 		FD0866C8CD3F60FDF55C2C8B /* libPods-JCBannerView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JCBannerView.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -59,6 +73,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F32908AC1B43CB9B0018164E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -67,6 +88,7 @@
 			children = (
 				60FF7A9C1954A5C5007DD14C /* Podspec Metadata */,
 				6003F593195388D20070C39A /* JCBannerView */,
+				F32908B01B43CB9B0018164E /* JCBannerView Tests */,
 				6003F58C195388D20070C39A /* Frameworks */,
 				6003F58B195388D20070C39A /* Products */,
 				A0BD34FFD2BF106BED0E210A /* Pods */,
@@ -77,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				6003F58A195388D20070C39A /* JCBannerView.app */,
+				F32908AF1B43CB9B0018164E /* JCBannerView Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -139,6 +162,23 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		F32908B01B43CB9B0018164E /* JCBannerView Tests */ = {
+			isa = PBXGroup;
+			children = (
+				F32908B31B43CB9B0018164E /* JCBannerView_Tests.m */,
+				F32908B11B43CB9B0018164E /* Supporting Files */,
+			);
+			path = "JCBannerView Tests";
+			sourceTree = "<group>";
+		};
+		F32908B11B43CB9B0018164E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F32908B21B43CB9B0018164E /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -161,6 +201,24 @@
 			productReference = 6003F58A195388D20070C39A /* JCBannerView.app */;
 			productType = "com.apple.product-type.application";
 		};
+		F32908AE1B43CB9B0018164E /* JCBannerView Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F32908B91B43CB9B0018164E /* Build configuration list for PBXNativeTarget "JCBannerView Tests" */;
+			buildPhases = (
+				F32908AB1B43CB9B0018164E /* Sources */,
+				F32908AC1B43CB9B0018164E /* Frameworks */,
+				F32908AD1B43CB9B0018164E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F32908B61B43CB9B0018164E /* PBXTargetDependency */,
+			);
+			name = "JCBannerView Tests";
+			productName = "JCBannerView Tests";
+			productReference = F32908AF1B43CB9B0018164E /* JCBannerView Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -170,6 +228,12 @@
 				CLASSPREFIX = JC;
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = lijingcheng;
+				TargetAttributes = {
+					F32908AE1B43CB9B0018164E = {
+						CreatedOnToolsVersion = 6.3.2;
+						TestTargetID = 6003F589195388D20070C39A;
+					};
+				};
 			};
 			buildConfigurationList = 6003F585195388D10070C39A /* Build configuration list for PBXProject "JCBannerView" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -185,6 +249,7 @@
 			projectRoot = "";
 			targets = (
 				6003F589195388D20070C39A /* JCBannerView */,
+				F32908AE1B43CB9B0018164E /* JCBannerView Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -197,6 +262,13 @@
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
 				6003F5A1195388D20070C39A /* Main_iPhone.storyboard in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F32908AD1B43CB9B0018164E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -246,7 +318,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F32908AB1B43CB9B0018164E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F32908B41B43CB9B0018164E /* JCBannerView_Tests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F32908B61B43CB9B0018164E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6003F589195388D20070C39A /* JCBannerView */;
+			targetProxy = F32908B51B43CB9B0018164E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		6003F596195388D20070C39A /* InfoPlist.strings */ = {
@@ -372,6 +460,53 @@
 			};
 			name = Release;
 		};
+		F32908B71B43CB9B0018164E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "JCBannerView Tests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JCBannerView.app/JCBannerView";
+			};
+			name = Debug;
+		};
+		F32908B81B43CB9B0018164E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "JCBannerView Tests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JCBannerView.app/JCBannerView";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -392,6 +527,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		F32908B91B43CB9B0018164E /* Build configuration list for PBXNativeTarget "JCBannerView Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F32908B71B43CB9B0018164E /* Debug */,
+				F32908B81B43CB9B0018164E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
