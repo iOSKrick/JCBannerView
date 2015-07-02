@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1CF00E877C4F79A847BD510F /* libPods-Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0137E379540972DC2B3D6101 /* libPods-Tests.a */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
@@ -20,6 +19,8 @@
 		A0C3DA7760862F9979503D26 /* libPods-JCBannerView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FD0866C8CD3F60FDF55C2C8B /* libPods-JCBannerView.a */; };
 		D5191810B8B754FF2F9A4AE3 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7414C8BD7C0360CEB5FA79B7 /* libPods.a */; };
 		F32908C91B43E9C90018164E /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = F32908C81B43E9C90018164E /* Tests.m */; };
+		F32908D01B44DB920018164E /* libPods-Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F32908CF1B44DB920018164E /* libPods-Tests.a */; };
+		F32908D21B44DBB90018164E /* libPods-Tests-JCBannerView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F32908D11B44DBB90018164E /* libPods-Tests-JCBannerView.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,8 @@
 		F32908C41B43E9C90018164E /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F32908C71B43E9C90018164E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F32908C81B43E9C90018164E /* Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tests.m; sourceTree = "<group>"; };
+		F32908CF1B44DB920018164E /* libPods-Tests.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-Tests.a"; path = "Pods/../build/Debug-iphoneos/libPods-Tests.a"; sourceTree = "<group>"; };
+		F32908D11B44DBB90018164E /* libPods-Tests-JCBannerView.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-Tests-JCBannerView.a"; path = "Pods/../build/Debug-iphoneos/libPods-Tests-JCBannerView.a"; sourceTree = "<group>"; };
 		FD0866C8CD3F60FDF55C2C8B /* libPods-JCBannerView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JCBannerView.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -80,7 +83,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1CF00E877C4F79A847BD510F /* libPods-Tests.a in Frameworks */,
+				F32908D21B44DBB90018164E /* libPods-Tests-JCBannerView.a in Frameworks */,
+				F32908D01B44DB920018164E /* libPods-Tests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,6 +115,8 @@
 		6003F58C195388D20070C39A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F32908D11B44DBB90018164E /* libPods-Tests-JCBannerView.a */,
+				F32908CF1B44DB920018164E /* libPods-Tests.a */,
 				6003F58D195388D20070C39A /* Foundation.framework */,
 				6003F58F195388D20070C39A /* CoreGraphics.framework */,
 				6003F591195388D20070C39A /* UIKit.framework */,
@@ -518,6 +524,10 @@
 				INFOPLIST_FILE = Tests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JCBannerView.app/JCBannerView";
@@ -541,6 +551,10 @@
 				INFOPLIST_FILE = Tests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JCBannerView.app/JCBannerView";
