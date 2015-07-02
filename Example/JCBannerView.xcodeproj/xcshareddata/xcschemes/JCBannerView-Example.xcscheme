@@ -15,36 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "6003F589195388D20070C39A"
-               BuildableName = "JCBannerView.app"
-               BlueprintName = "JCBannerView"
-               ReferencedContainer = "container:JCBannerView.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F32908AE1B43CB9B0018164E"
-               BuildableName = "JCBannerView Tests.xctest"
-               BlueprintName = "JCBannerView Tests"
-               ReferencedContainer = "container:JCBannerView.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F32908C31B43E9C90018164E"
-               BuildableName = "Tests.xctest"
-               BlueprintName = "Tests"
+               BuildableName = "JCBannerView_Example.app"
+               BlueprintName = "JCBannerView_Example"
                ReferencedContainer = "container:JCBannerView.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -60,19 +32,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F32908AE1B43CB9B0018164E"
-               BuildableName = "JCBannerView Tests.xctest"
-               BlueprintName = "JCBannerView Tests"
-               ReferencedContainer = "container:JCBannerView.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F32908C31B43E9C90018164E"
-               BuildableName = "Tests.xctest"
-               BlueprintName = "Tests"
+               BlueprintIdentifier = "6003F5AD195388D20070C39A"
+               BuildableName = "JCBannerView_Tests.xctest"
+               BlueprintName = "JCBannerView_Tests"
                ReferencedContainer = "container:JCBannerView.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -81,8 +43,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6003F589195388D20070C39A"
-            BuildableName = "JCBannerView.app"
-            BlueprintName = "JCBannerView"
+            BuildableName = "JCBannerView_Example.app"
+            BlueprintName = "JCBannerView_Example"
             ReferencedContainer = "container:JCBannerView.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -101,8 +63,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6003F589195388D20070C39A"
-            BuildableName = "JCBannerView.app"
-            BlueprintName = "JCBannerView"
+            BuildableName = "JCBannerView_Example.app"
+            BlueprintName = "JCBannerView_Example"
             ReferencedContainer = "container:JCBannerView.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -120,8 +82,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6003F589195388D20070C39A"
-            BuildableName = "JCBannerView.app"
-            BlueprintName = "JCBannerView"
+            BuildableName = "JCBannerView_Example.app"
+            BlueprintName = "JCBannerView_Example"
             ReferencedContainer = "container:JCBannerView.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
