@@ -14,8 +14,8 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C299458EC1870ECD81AC76C2"
-               BuildableName = "libPods-JCBannerView-JCBannerView.a"
+               BlueprintIdentifier = "C04972758B73F47DED5C958D"
+               BuildableName = "JCBannerView.framework"
                BlueprintName = "Pods-JCBannerView-JCBannerView"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
@@ -39,6 +39,15 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "C04972758B73F47DED5C958D"
+            BuildableName = "JCBannerView.framework"
+            BlueprintName = "Pods-JCBannerView-JCBannerView"
+            ReferencedContainer = "container:Pods.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
