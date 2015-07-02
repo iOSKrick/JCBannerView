@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		00218EA131515FA7F7DE8657 /* Pods_JCBannerView_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA3D24479C44189ADE26914C /* Pods_JCBannerView_Example.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		2F9D40D7D6CBA36817F8E038 /* libPods-JCBannerView_Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BD49D73F75A7141E8EC31D9E /* libPods-JCBannerView_Tests.a */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
@@ -22,7 +22,7 @@
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
-		D721C680AC51EC2A7C9273BD /* Pods_JCBannerView_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15E60B415FFBB306981E29A9 /* Pods_JCBannerView_Tests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		FA91A115F72AE7070BD705E4 /* libPods-JCBannerView_Example.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C921B86FD842CB5A65FF714 /* libPods-JCBannerView_Example.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +36,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		15E60B415FFBB306981E29A9 /* Pods_JCBannerView_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JCBannerView_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		316008608913B9DCFF260B4B /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		4E704D24744F16989F8EA120 /* Pods-JCBannerView_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JCBannerView_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-JCBannerView_Example/Pods-JCBannerView_Example.release.xcconfig"; sourceTree = "<group>"; };
 		53AB95AC78239F66912B6855 /* JCBannerView.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = JCBannerView.podspec; path = ../JCBannerView.podspec; sourceTree = "<group>"; };
@@ -61,10 +60,11 @@
 		6003F5BB195388D20070C39A /* Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tests.m; sourceTree = "<group>"; };
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		8C921B86FD842CB5A65FF714 /* libPods-JCBannerView_Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JCBannerView_Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A07253E2CEF56E6BC6EADC8 /* Pods-JCBannerView_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JCBannerView_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-JCBannerView_Tests/Pods-JCBannerView_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		A16A7E5C90AE91402B9D5D01 /* Pods-JCBannerView_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JCBannerView_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JCBannerView_Tests/Pods-JCBannerView_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		BD49D73F75A7141E8EC31D9E /* libPods-JCBannerView_Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JCBannerView_Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C01A2B0C3AFFC5205E76B540 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		FA3D24479C44189ADE26914C /* Pods_JCBannerView_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JCBannerView_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,7 +75,7 @@
 				6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */,
 				6003F592195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F58E195388D20070C39A /* Foundation.framework in Frameworks */,
-				00218EA131515FA7F7DE8657 /* Pods_JCBannerView_Example.framework in Frameworks */,
+				FA91A115F72AE7070BD705E4 /* libPods-JCBannerView_Example.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,7 +86,7 @@
 				6003F5B0195388D20070C39A /* XCTest.framework in Frameworks */,
 				6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F5B1195388D20070C39A /* Foundation.framework in Frameworks */,
-				D721C680AC51EC2A7C9273BD /* Pods_JCBannerView_Tests.framework in Frameworks */,
+				2F9D40D7D6CBA36817F8E038 /* libPods-JCBannerView_Tests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,8 +121,8 @@
 				6003F58F195388D20070C39A /* CoreGraphics.framework */,
 				6003F591195388D20070C39A /* UIKit.framework */,
 				6003F5AF195388D20070C39A /* XCTest.framework */,
-				FA3D24479C44189ADE26914C /* Pods_JCBannerView_Example.framework */,
-				15E60B415FFBB306981E29A9 /* Pods_JCBannerView_Tests.framework */,
+				8C921B86FD842CB5A65FF714 /* libPods-JCBannerView_Example.a */,
+				BD49D73F75A7141E8EC31D9E /* libPods-JCBannerView_Tests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -204,7 +204,6 @@
 				6003F586195388D20070C39A /* Sources */,
 				6003F587195388D20070C39A /* Frameworks */,
 				6003F588195388D20070C39A /* Resources */,
-				1D2FBC5EA378C0F9343622C7 /* Embed Pods Frameworks */,
 				0DB772B0525FF5B389AB88FE /* Copy Pods Resources */,
 			);
 			buildRules = (
@@ -224,7 +223,6 @@
 				6003F5AA195388D20070C39A /* Sources */,
 				6003F5AB195388D20070C39A /* Frameworks */,
 				6003F5AC195388D20070C39A /* Resources */,
-				343B1018169D3DFC12E428E6 /* Embed Pods Frameworks */,
 				F3428D8A0B0741AAEDAD6F97 /* Copy Pods Resources */,
 			);
 			buildRules = (
@@ -306,36 +304,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JCBannerView_Example/Pods-JCBannerView_Example-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		1D2FBC5EA378C0F9343622C7 /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JCBannerView_Example/Pods-JCBannerView_Example-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		343B1018169D3DFC12E428E6 /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JCBannerView_Tests/Pods-JCBannerView_Tests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		956A60BA10DB8FFAAD12E72D /* Check Pods Manifest.lock */ = {

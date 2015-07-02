@@ -1,6 +1,0 @@
-framework module JCBannerView {
-  umbrella header "Pods-JCBannerView_Tests-JCBannerView-umbrella.h"
-
-  export *
-  module * { export * }
-}
