@@ -23,6 +23,6 @@ s.resource_bundles = {
 'JCBannerView' => ['Pod/Assets/*.png']
 }
 s.platform     = :ios, '7.0'
-s.dependency 'SDWebImage', '3.7.2'
-s.dependency 'Masonry', '0.6.1'
+s.dependency 'SDWebImage', '3.7.3'
+s.dependency 'Masonry', '0.6.2'
 end
