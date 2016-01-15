@@ -10,7 +10,7 @@
 
 @interface JCBannerCell : UICollectionViewCell
 
-@property (nonatomic, copy) NSDictionary *data;
+@property (nonatomic, copy) NSDictionary *data;//data[@"image"] can be a url, also can be a UIImage
 @property (nonatomic, strong) UIImage *placeholderImage;
 @property (nonatomic, assign) BOOL hideTitleLabel; //default YES
 

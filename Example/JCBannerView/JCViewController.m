@@ -21,6 +21,7 @@
 {
     [super viewDidLoad];
     
+//    @"image" can be [UIImage imageNamed:@"img_placeholder"]
     self.datas = @[
                    @{@"id": @"1", @"title": @"Facebook开源Nuclide项目", @"image": @"http://7x00ed.com1.z0.glb.clouddn.com/avatar.png", @"url": @"http://lijingcheng.github.io/"},
                    @{@"id": @"2", @"title": @"Facebook应用Moments使用C++实现跨平台代码共享", @"image": @"http://7x00ed.com1.z0.glb.clouddn.com/cocoapods.png", @"url": @"http://lijingcheng.github.io/"},

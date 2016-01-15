@@ -106,21 +106,35 @@
     self.titleLabel.hidden = _hideTitleLabel;
 }
 
+- (void)addLayerToImageView
+{
+    if (!self.titleLabel.hidden && ![self.imageView jc_hasLayer:kImageLayerKey]) {
+        CALayer *layer = [CALayer layer];
+        layer.frame = CGRectMake(0, self.bounds.size.height-30, self.bounds.size.width, 30);
+        layer.name = kImageLayerKey;
+        layer.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.5f].CGColor;
+        [self.imageView.layer addSublayer:layer];
+    }
+}
+
 - (void)setData:(NSDictionary *)data
 {
     self.titleLabel.text = data[@"title"];
     
-    [self.imageView sd_setImageWithURL:[NSURL URLWithString:data[@"image"]] placeholderImage:self.placeholderImage completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-        if (!self.titleLabel.hidden && ![self.imageView jc_hasLayer:kImageLayerKey]) {
-            CALayer *layer = [CALayer layer];
-            layer.frame = CGRectMake(0, self.bounds.size.height-30, self.bounds.size.width, 30);
-            layer.name = kImageLayerKey;
-            layer.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.5f].CGColor;
-            [self.imageView.layer addSublayer:layer];
-        }
+    if ([data[@"image"] isKindOfClass:[UIImage class]]) {
+        self.imageView.image = data[@"image"];
+        
+        [self addLayerToImageView];
         
         [self.activityView stopAnimating];
-    }];
+    }
+    else {
+        [self.imageView sd_setImageWithURL:[NSURL URLWithString:data[@"image"]] placeholderImage:self.placeholderImage completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+            [self addLayerToImageView];
+            
+            [self.activityView stopAnimating];
+        }];
+    }
 }
 
 @end
