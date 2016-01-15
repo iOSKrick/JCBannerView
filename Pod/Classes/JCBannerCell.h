@@ -10,9 +10,8 @@
 
 @interface JCBannerCell : UICollectionViewCell
 
-@property (nonatomic, strong) UILabel *titleLabel;
-@property (nonatomic, strong) UIImageView *imageView;
-
 @property (nonatomic, copy) NSDictionary *data;
+@property (nonatomic, strong) UIImage *placeholderImage;
+@property (nonatomic, assign) BOOL hideTitleLabel; //default YES
 
 @end

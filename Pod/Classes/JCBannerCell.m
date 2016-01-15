@@ -11,6 +11,8 @@
 #import "JCBannerView.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 
+#define kImageLayerKey @"imageLayer"
+
 @interface UIView (JC)
 
 - (BOOL)jc_hasLayer:(NSString *)name;
@@ -37,6 +39,8 @@
 
 @interface JCBannerCell ()
 
+@property (nonatomic, strong) UILabel *titleLabel;
+@property (nonatomic, strong) UIImageView *imageView;
 @property (nonatomic, strong) UIActivityIndicatorView *activityView;
 
 @end
@@ -46,21 +50,23 @@
 - (instancetype)initWithFrame:(CGRect)frame
 {
     if (self = [super initWithFrame:frame]) {
-        self.imageView = [[UIImageView alloc] initWithFrame:self.bounds];
-        self.imageView.backgroundColor = [UIColor colorWithRed:217/255.0f green:217/255.0f blue:217/255.0f alpha:1];
-        [self.contentView addSubview:self.imageView];
+        _hideTitleLabel = YES;
         
-        self.activityView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
-        self.activityView.center = self.imageView.center;
-        [self.imageView addSubview:self.activityView];
+        _imageView = [[UIImageView alloc] initWithFrame:self.bounds];
+        _imageView.backgroundColor = [UIColor colorWithRed:217/255.0f green:217/255.0f blue:217/255.0f alpha:1];
+        [self.contentView addSubview:_imageView];
         
-        [self.activityView startAnimating];
+        _activityView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
+        _activityView.center = _imageView.center;
+        [_imageView addSubview:_activityView];
         
-        self.titleLabel = [[UILabel alloc] initWithFrame:CGRectZero];
-        self.titleLabel.hidden = YES;
-        self.titleLabel.font = [UIFont systemFontOfSize:14.0f];
-        self.titleLabel.textColor = [UIColor whiteColor];
-        [self.contentView addSubview:self.titleLabel];
+        [_activityView startAnimating];
+        
+        _titleLabel = [[UILabel alloc] initWithFrame:CGRectZero];
+        _titleLabel.hidden = _hideTitleLabel;
+        _titleLabel.font = [UIFont systemFontOfSize:14.0f];
+        _titleLabel.textColor = [UIColor whiteColor];
+        [self.contentView addSubview:_titleLabel];
     }
     
     return self;
@@ -91,15 +97,24 @@
     [self.activityView startAnimating];
 }
 
+#pragma mark - private
+
+- (void)setHideTitleLabel:(BOOL)hideTitleLabel
+{
+    _hideTitleLabel = hideTitleLabel;
+    
+    self.titleLabel.hidden = _hideTitleLabel;
+}
+
 - (void)setData:(NSDictionary *)data
 {
     self.titleLabel.text = data[@"title"];
     
-    [self.imageView sd_setImageWithURL:[NSURL URLWithString:data[@"image"]] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-        if (!self.titleLabel.hidden && ![self.imageView jc_hasLayer:@"imageLayer"]) {
+    [self.imageView sd_setImageWithURL:[NSURL URLWithString:data[@"image"]] placeholderImage:self.placeholderImage completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+        if (!self.titleLabel.hidden && ![self.imageView jc_hasLayer:kImageLayerKey]) {
             CALayer *layer = [CALayer layer];
             layer.frame = CGRectMake(0, self.bounds.size.height-30, self.bounds.size.width, 30);
-            layer.name = @"imageLayer";
+            layer.name = kImageLayerKey;
             layer.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.5f].CGColor;
             [self.imageView.layer addSublayer:layer];
         }

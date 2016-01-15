@@ -22,7 +22,7 @@
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
-		F38A5A301BCF5AAC00433581 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F38A5A2F1BCF5AAC00433581 /* Launch Screen.storyboard */; settings = {ASSET_TAGS = (); }; };
+		F38A5A301BCF5AAC00433581 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F38A5A2F1BCF5AAC00433581 /* Launch Screen.storyboard */; };
 		FA91A115F72AE7070BD705E4 /* libPods-JCBannerView_Example.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C921B86FD842CB5A65FF714 /* libPods-JCBannerView_Example.a */; };
 /* End PBXBuildFile section */
 

@@ -10,6 +10,8 @@
 #import "JCBannerCell.h"
 #import "Masonry.h"
 
+#define kScrollAnimationKey @"scrollAnimation"
+
 @interface JCBannerView ()<UICollectionViewDelegate, UICollectionViewDataSource>
 
 @property (nonatomic, strong) UICollectionView *collectionView;
@@ -84,7 +86,8 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     JCBannerCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([JCBannerCell class]) forIndexPath:indexPath];
-    cell.titleLabel.hidden = self.hideTitleLabel;
+    cell.hideTitleLabel = self.hideTitleLabel;
+    cell.placeholderImage = self.placeholderImage;
     cell.data = self.items[indexPath.item];
     
     return cell;
@@ -129,9 +132,8 @@
 
 - (void)setup
 {
-    self.items = @[];
-    self.hideTitleLabel = YES;
-    self.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+    _items = @[];
+    _hideTitleLabel = YES;
     
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
     layout.sectionInset = UIEdgeInsetsZero;
@@ -139,23 +141,22 @@
     layout.minimumLineSpacing = 0;
     layout.minimumInteritemSpacing = 0;
     
-    self.collectionView = [[UICollectionView alloc] initWithFrame:self.bounds collectionViewLayout:layout];
-    self.collectionView.delegate = self;
-    self.collectionView.dataSource = self;
-    self.collectionView.pagingEnabled = YES;
-    self.collectionView.showsHorizontalScrollIndicator = NO;
-    self.collectionView.showsVerticalScrollIndicator = NO;
-    self.collectionView.backgroundColor = [UIColor whiteColor];
-    self.collectionView.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
-    [self.collectionView registerClass:[JCBannerCell class] forCellWithReuseIdentifier:NSStringFromClass([JCBannerCell class])];
-    [self addSubview:self.collectionView];
+    _collectionView = [[UICollectionView alloc] initWithFrame:self.bounds collectionViewLayout:layout];
+    _collectionView.delegate = self;
+    _collectionView.dataSource = self;
+    _collectionView.pagingEnabled = YES;
+    _collectionView.showsHorizontalScrollIndicator = NO;
+    _collectionView.showsVerticalScrollIndicator = NO;
+    _collectionView.backgroundColor = [UIColor whiteColor];
+    [_collectionView registerClass:[JCBannerCell class] forCellWithReuseIdentifier:NSStringFromClass([JCBannerCell class])];
+    [self addSubview:_collectionView];
     
-    self.pageControl = [[UIPageControl alloc] initWithFrame:CGRectZero];
-    self.pageControl.hidesForSinglePage = YES;
-    self.pageControl.userInteractionEnabled = NO;
-    self.pageControl.pageIndicatorTintColor = [UIColor lightGrayColor];
-    self.pageControl.currentPageIndicatorTintColor = [UIColor whiteColor];
-    [self addSubview:self.pageControl];
+    _pageControl = [[UIPageControl alloc] initWithFrame:CGRectZero];
+    _pageControl.hidesForSinglePage = YES;
+    _pageControl.userInteractionEnabled = NO;
+    _pageControl.pageIndicatorTintColor = [UIColor lightGrayColor];
+    _pageControl.currentPageIndicatorTintColor = [UIColor whiteColor];
+    [self addSubview:_pageControl];
 }
 
 - (void)startPlay
@@ -168,6 +169,8 @@
 
 - (void)stopPlay
 {
+    [self.collectionView.layer removeAnimationForKey:kScrollAnimationKey];
+    
     [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(next) object:nil];
 }
 
@@ -182,7 +185,7 @@
     
     self.collectionView.contentOffset = CGPointMake(self.pageControl.currentPage * self.collectionView.frame.size.width, 0);
     
-    [self.collectionView.layer addAnimation:[self scrollBannerAnimation] forKey:@"scrollAnimation"];
+    [self.collectionView.layer addAnimation:[self scrollBannerAnimation] forKey:kScrollAnimationKey];
     
     [self startPlay];
 }

@@ -26,10 +26,7 @@
                    @{@"id": @"2", @"title": @"Facebook应用Moments使用C++实现跨平台代码共享", @"image": @"http://7x00ed.com1.z0.glb.clouddn.com/cocoapods.png", @"url": @"http://lijingcheng.github.io/"},
                    @{@"id": @"3", @"title": @"密码管理器LastPass遭到黑客攻击", @"image": @"http://7x00ed.com1.z0.glb.clouddn.com/github-octopress.png", @"url": @"http://lijingcheng.github.io/"}
                    ];
-    
-    UICollectionViewFlowLayout *layout = (UICollectionViewFlowLayout *)self.collectionViewLayout;
-    layout.headerReferenceSize = CGSizeMake(self.collectionView.frame.size.width, 180);
-    
+
     [self.collectionView registerClass:[JCBannerView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:NSStringFromClass([JCBannerView class])];
 }
 
@@ -45,6 +42,11 @@
     return CGSizeMake(collectionView.frame.size.width, 50);
 }
 
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section
+{
+    return CGSizeMake(collectionView.frame.size.width, 180);
+}
+
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     return [collectionView dequeueReusableCellWithReuseIdentifier:@"reuseIdentifier" forIndexPath:indexPath];
@@ -54,6 +56,7 @@
 {
     if([kind isEqual:UICollectionElementKindSectionHeader]) {
         JCBannerView *bannerView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:NSStringFromClass([JCBannerView class]) forIndexPath:indexPath];
+        bannerView.placeholderImage = [UIImage imageNamed:@"img_placeholder"];
         bannerView.hideTitleLabel = NO;
         bannerView.autoPlayingInterval = 3;
         bannerView.items = self.datas;

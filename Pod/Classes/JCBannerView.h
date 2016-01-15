@@ -14,6 +14,7 @@ typedef void (^JCBannerViewBlock)(NSDictionary *data);
 
 @property (nonatomic, copy) NSArray *items;
 
+@property (nonatomic, strong) UIImage *placeholderImage;
 @property (nonatomic, assign) BOOL hideTitleLabel; //default YES
 @property (nonatomic, assign) NSInteger autoPlayingInterval; //default 0
 
