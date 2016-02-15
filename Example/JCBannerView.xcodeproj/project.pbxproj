@@ -22,7 +22,6 @@
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
-		F38A5A301BCF5AAC00433581 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F38A5A2F1BCF5AAC00433581 /* Launch Screen.storyboard */; };
 		FA91A115F72AE7070BD705E4 /* libPods-JCBannerView_Example.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C921B86FD842CB5A65FF714 /* libPods-JCBannerView_Example.a */; };
 /* End PBXBuildFile section */
 
@@ -66,7 +65,6 @@
 		A16A7E5C90AE91402B9D5D01 /* Pods-JCBannerView_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JCBannerView_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JCBannerView_Tests/Pods-JCBannerView_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		BD49D73F75A7141E8EC31D9E /* libPods-JCBannerView_Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JCBannerView_Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C01A2B0C3AFFC5205E76B540 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		F38A5A2F1BCF5AAC00433581 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,7 +143,6 @@
 		6003F594195388D20070C39A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				F38A5A2F1BCF5AAC00433581 /* Launch Screen.storyboard */,
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F595195388D20070C39A /* JCBannerView-Info.plist */,
@@ -279,7 +276,6 @@
 			files = (
 				873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
-				F38A5A301BCF5AAC00433581 /* Launch Screen.storyboard in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
