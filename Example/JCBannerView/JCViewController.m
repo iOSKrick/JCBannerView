@@ -64,6 +64,7 @@
         [bannerView setCompletionBlockWithSeleted:^(NSDictionary *data) {
             NSLog(@"%@", data);
         }];
+        [bannerView reloadData];
         
         return bannerView;
     }

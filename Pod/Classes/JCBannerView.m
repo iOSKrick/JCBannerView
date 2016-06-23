@@ -47,7 +47,7 @@
     
     self.collectionView.frame = self.bounds;
     
-    [self.pageControl mas_makeConstraints:^(MASConstraintMaker *make) {
+    [self.pageControl mas_remakeConstraints:^(MASConstraintMaker *make) {
         if (self.hideTitleLabel) {
             make.centerX.equalTo(self);
         }
@@ -60,7 +60,12 @@
         make.height.mas_equalTo(30);
     }];
     
-    [self reloadData];
+    if (self.pageControl.numberOfPages > 1) {
+        static dispatch_once_t onceToken;
+        dispatch_once(&onceToken, ^{
+            [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:1 inSection:0] atScrollPosition:UICollectionViewScrollPositionLeft animated:NO];
+        });
+    }
 }
 
 - (void)dealloc
@@ -72,8 +77,8 @@
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
+    self.pageControl.numberOfPages = self.items.count <= 1 ? : (self.items.count - 2);
     self.pageControl.currentPage = 0;
-    self.pageControl.numberOfPages = self.items.count;
     
     return self.items.count;
 }
@@ -109,9 +114,25 @@
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 {
-    [self startPlay];
+    NSInteger currentPage = fabs(scrollView.contentOffset.x/scrollView.frame.size.width);
     
-    self.pageControl.currentPage = fabs(scrollView.contentOffset.x/scrollView.frame.size.width);
+    if (currentPage == 0) {
+        currentPage = self.items.count - 3;
+        
+        self.collectionView.contentOffset = CGPointMake((self.items.count-2) * self.collectionView.frame.size.width, 0);
+    }
+    else if (currentPage == self.items.count-1) {
+        currentPage = 0;
+        
+        self.collectionView.contentOffset = CGPointMake(self.collectionView.frame.size.width, 0);
+    }
+    else {
+        currentPage--;
+    }
+    
+    self.pageControl.currentPage = currentPage;
+    
+    [self startPlay];
 }
 
 #pragma mark - public
@@ -123,6 +144,8 @@
 
 - (void)reloadData
 {
+    [self stopPlay];
+    
     [self.collectionView reloadData];
     
     [self startPlay];
@@ -159,6 +182,19 @@
     [self addSubview:_pageControl];
 }
 
+- (void)setItems:(NSArray *)items
+{
+    _items = items;
+    
+    if (items.count > 1) {
+        NSMutableArray *newItems = [[NSMutableArray alloc] initWithArray:items];
+        [newItems insertObject:items.lastObject atIndex:0];
+        [newItems addObject:items.firstObject];
+        
+        _items = newItems;
+    }
+}
+
 - (void)startPlay
 {
     if (self.autoPlayingInterval > 0 && self.items.count > 1) {
@@ -176,16 +212,20 @@
 
 - (void)next
 {
-    if (self.pageControl.currentPage == (self.items.count - 1)) {
-        self.pageControl.currentPage = 0;
+    NSInteger currentPage = self.pageControl.currentPage;
+    
+    if (self.pageControl.currentPage == (self.items.count - 3)) {
+        currentPage = 0;
     }
     else {
-        self.pageControl.currentPage++;
+        currentPage++;
     }
     
-    self.collectionView.contentOffset = CGPointMake(self.pageControl.currentPage * self.collectionView.frame.size.width, 0);
+    self.collectionView.contentOffset = CGPointMake((currentPage + 1) * self.collectionView.frame.size.width, 0);
     
     [self.collectionView.layer addAnimation:[self scrollBannerAnimation] forKey:kScrollAnimationKey];
+    
+    self.pageControl.currentPage = currentPage;
     
     [self startPlay];
 }

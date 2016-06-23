@@ -54,6 +54,8 @@
         
         _imageView = [[UIImageView alloc] initWithFrame:self.bounds];
         _imageView.backgroundColor = [UIColor colorWithRed:217/255.0f green:217/255.0f blue:217/255.0f alpha:1];
+        _imageView.contentMode = UIViewContentModeScaleAspectFill;// 默认模式会破坏图片比例，目前保持图片比例不变，并且填充视图
+        _imageView.clipsToBounds = YES;
         [self.contentView addSubview:_imageView];
         
         _activityView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
