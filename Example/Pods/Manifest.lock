@@ -1,11 +1,11 @@
 PODS:
-  - JCBannerView (0.0.4):
-    - Masonry (= 0.6.1)
-    - SDWebImage (= 3.7.2)
-  - Masonry (0.6.1)
-  - SDWebImage (3.7.2):
-    - SDWebImage/Core (= 3.7.2)
-  - SDWebImage/Core (3.7.2)
+  - JCBannerView (1.0.0):
+    - Masonry (= 1.0.2)
+    - SDWebImage (= 3.8.2)
+  - Masonry (1.0.2)
+  - SDWebImage (3.8.2):
+    - SDWebImage/Core (= 3.8.2)
+  - SDWebImage/Core (3.8.2)
 
 DEPENDENCIES:
   - JCBannerView (from `../`)
@@ -15,8 +15,10 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  JCBannerView: 51c99c1167438e20bba5da0643a7b287c75edfb0
-  Masonry: 4972309f2f134de9dd312f4dc4a21359b50e6caa
-  SDWebImage: 71b7cdc1d1721d6a82ed62889030225f2c249e29
+  JCBannerView: 2d470bf950623bfa030ff701bee60a3f2c70fe63
+  Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
+  SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
 
-COCOAPODS: 0.37.2
+PODFILE CHECKSUM: 5a619632eafa2d56a6edbc39598d58163b29ead5
+
+COCOAPODS: 1.2.0.beta.1

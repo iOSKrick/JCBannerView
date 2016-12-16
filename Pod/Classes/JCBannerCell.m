@@ -21,18 +21,14 @@
 
 @implementation UIView (JC)
 
-- (BOOL)jc_hasLayer:(NSString *)name
-{
-    BOOL flag = NO;
-    
+- (BOOL)jc_hasLayer:(NSString *)name {
     for (CALayer *subLayer in self.layer.sublayers) {
         if ([subLayer.name isEqualToString:name]) {
-            flag = YES;
-            break;
+            return YES;
         }
     }
     
-    return flag;
+    return NO;
 }
 
 @end
@@ -41,101 +37,96 @@
 
 @property (nonatomic, strong) UILabel *titleLabel;
 @property (nonatomic, strong) UIImageView *imageView;
-@property (nonatomic, strong) UIActivityIndicatorView *activityView;
 
 @end
 
 @implementation JCBannerCell
 
-- (instancetype)initWithFrame:(CGRect)frame
-{
+- (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
         _hideTitleLabel = YES;
         
-        _imageView = [[UIImageView alloc] initWithFrame:self.bounds];
-        _imageView.backgroundColor = [UIColor colorWithRed:217/255.0f green:217/255.0f blue:217/255.0f alpha:1];
-        _imageView.contentMode = UIViewContentModeScaleAspectFill;// 默认模式会破坏图片比例，目前保持图片比例不变，并且填充视图
-        _imageView.clipsToBounds = YES;
-        [self.contentView addSubview:_imageView];
-        
-        _activityView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
-        _activityView.center = _imageView.center;
-        [_imageView addSubview:_activityView];
-        
-        [_activityView startAnimating];
-        
-        _titleLabel = [[UILabel alloc] initWithFrame:CGRectZero];
-        _titleLabel.hidden = _hideTitleLabel;
-        _titleLabel.font = [UIFont systemFontOfSize:14.0f];
-        _titleLabel.textColor = [UIColor whiteColor];
-        [self.contentView addSubview:_titleLabel];
+        [self.contentView addSubview:self.imageView];
+        [self.contentView addSubview:self.titleLabel];
     }
     
     return self;
 }
 
-- (void)layoutSubviews
-{
+- (void)layoutSubviews {
     [super layoutSubviews];
     
     self.imageView.frame = self.bounds;
-    self.activityView.center = self.imageView.center;
     
     [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self).with.offset(5);
-        make.right.equalTo(self).with.offset(-80);
-        make.bottom.equalTo(self).offset(0);
-        make.height.mas_equalTo(30);
+        make.left.equalTo(self).with.offset(10);
+        make.right.equalTo(self).with.offset(-60);
+        make.bottom.equalTo(self).offset(-5);
+        make.height.mas_equalTo(20);
     }];
 }
 
-- (void)prepareForReuse
-{
+- (void)prepareForReuse {
     [super prepareForReuse];
     
     self.titleLabel.text = @"";
     self.imageView.image = nil;
-    
-    [self.activityView startAnimating];
 }
 
-#pragma mark - private
+#pragma mark - setter/getter
 
-- (void)setHideTitleLabel:(BOOL)hideTitleLabel
-{
+- (UIImageView *)imageView {
+    if (!_imageView) {
+        _imageView = [[UIImageView alloc] initWithFrame:self.bounds];
+        _imageView.backgroundColor = [UIColor colorWithRed:217/255.0f green:217/255.0f blue:217/255.0f alpha:1];
+        _imageView.contentMode = UIViewContentModeScaleAspectFill;// 默认模式会破坏图片比例，目前保持图片比例不变，并且填充视图
+        _imageView.clipsToBounds = YES;
+    }
+    
+    return _imageView;
+}
+
+- (UILabel *)titleLabel {
+    if (!_titleLabel) {
+        _titleLabel = [[UILabel alloc] initWithFrame:CGRectZero];
+        _titleLabel.hidden = _hideTitleLabel;
+        _titleLabel.font = [UIFont systemFontOfSize:14.0f];
+        _titleLabel.textColor = [UIColor whiteColor];
+    }
+    
+    return _titleLabel;
+}
+
+- (void)setHideTitleLabel:(BOOL)hideTitleLabel {
     _hideTitleLabel = hideTitleLabel;
     
     self.titleLabel.hidden = _hideTitleLabel;
 }
 
-- (void)addLayerToImageView
-{
-    if (!self.titleLabel.hidden && ![self.imageView jc_hasLayer:kImageLayerKey]) {
-        CALayer *layer = [CALayer layer];
-        layer.frame = CGRectMake(0, self.bounds.size.height-30, self.bounds.size.width, 30);
-        layer.name = kImageLayerKey;
-        layer.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.5f].CGColor;
-        [self.imageView.layer addSublayer:layer];
-    }
-}
-
-- (void)setData:(NSDictionary *)data
-{
+- (void)setData:(NSDictionary *)data {
     self.titleLabel.text = data[@"title"];
     
     if ([data[@"image"] isKindOfClass:[UIImage class]]) {
         self.imageView.image = data[@"image"];
         
         [self addLayerToImageView];
-        
-        [self.activityView stopAnimating];
     }
     else {
         [self.imageView sd_setImageWithURL:[NSURL URLWithString:data[@"image"]] placeholderImage:self.placeholderImage completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
             [self addLayerToImageView];
-            
-            [self.activityView stopAnimating];
         }];
+    }
+}
+
+#pragma mark - private
+
+- (void)addLayerToImageView {
+    if (!self.titleLabel.hidden && ![self.imageView jc_hasLayer:kImageLayerKey]) {
+        CALayer *layer = [CALayer layer];
+        layer.frame = CGRectMake(0, self.bounds.size.height-30, self.bounds.size.width, 30);
+        layer.name = kImageLayerKey;
+        layer.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.5f].CGColor;
+        [self.imageView.layer addSublayer:layer];
     }
 }
 

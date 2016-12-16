@@ -1,11 +1,11 @@
 source 'https://github.com/CocoaPods/Specs.git'
 
-target 'JCBannerView_Example', :exclusive => true do
+platform :ios, "8.0"
+
+target 'JCBannerView_Example' do
   pod "JCBannerView", :path => "../"
 end
 
-target 'JCBannerView_Tests', :exclusive => true do
+target 'JCBannerView_Tests' do
   pod "JCBannerView", :path => "../"
-
-  
 end
