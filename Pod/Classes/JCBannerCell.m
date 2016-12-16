@@ -8,7 +8,6 @@
 
 #import "JCBannerCell.h"
 #import "Masonry.h"
-#import "JCBannerView.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 
 #define kImageLayerKey @"imageLayer"
@@ -58,9 +57,11 @@
     
     self.imageView.frame = self.bounds;
     
-    [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+    UIView *pageControl = [self.superview.superview valueForKey:@"pageControl"];
+    
+    [self.titleLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self).with.offset(10);
-        make.right.equalTo(self).with.offset(-60);
+        make.right.equalTo(self).with.offset(-(pageControl.frame.size.width + 10));
         make.bottom.equalTo(self).offset(-5);
         make.height.mas_equalTo(20);
     }];

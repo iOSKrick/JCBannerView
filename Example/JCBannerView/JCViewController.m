@@ -22,11 +22,10 @@
     
 //    @"image" can be [UIImage imageNamed:@"img_placeholder"]
     self.datas = @[
-                   @{@"id": @"1", @"title": @"Facebook开源Nuclide项目", @"image": @"http://7x00ed.com1.z0.glb.clouddn.com/avatar.png", @"url": @"http://lijingcheng.github.io/"},
-                   @{@"id": @"2", @"title": @"Facebook应用Moments使用C++实现跨平台代码共享", @"image": @"http://7x00ed.com1.z0.glb.clouddn.com/cocoapods.png", @"url": @"http://lijingcheng.github.io/"},
-                   @{@"id": @"3", @"title": @"密码管理器LastPass遭到黑客攻击", @"image": @"http://7x00ed.com1.z0.glb.clouddn.com/github-octopress.png", @"url": @"http://lijingcheng.github.io/"},@{@"id": @"1", @"title": @"Facebook开源Nuclide项目", @"image": @"http://7x00ed.com1.z0.glb.clouddn.com/avatar.png", @"url": @"http://lijingcheng.github.io/"},
-                   @{@"id": @"2", @"title": @"Facebook应用Moments使用C++实现跨平台代码共享", @"image": @"http://7x00ed.com1.z0.glb.clouddn.com/cocoapods.png", @"url": @"http://lijingcheng.github.io/"},
-                   @{@"id": @"3", @"title": @"密码管理器LastPass遭到黑客攻击", @"image": @"http://7x00ed.com1.z0.glb.clouddn.com/github-octopress.png", @"url": @"http://lijingcheng.github.io/"}
+                   @{@"id": @"1", @"title": @"使用 Xcodebuild 打包 IPA 并上传蒲公英", @"image": @"http://7x00ed.com1.z0.glb.clouddn.com/xcodebuild.jpg", @"url": @"http://lijingcheng.github.io/"},
+                   @{@"id": @"2", @"title": @"使用 CocoaPods 做依赖管理", @"image": @"http://7x00ed.com1.z0.glb.clouddn.com/cocoapods.png", @"url": @"http://lijingcheng.github.io/"},
+                   @{@"id": @"3", @"title": @"GitHub Pages + Octopress 搭博客", @"image": @"http://7x00ed.com1.z0.glb.clouddn.com/github-octopress.png", @"url": @"http://lijingcheng.github.io/"},
+                   @{@"id": @"2", @"title": @"iOS 应用的组件化设计", @"image": @"http://7x00ed.com1.z0.glb.clouddn.com/component.jpg", @"url": @"http://lijingcheng.github.io/"}
                    ];
 
     [self.collectionView registerClass:[JCBannerView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:NSStringFromClass([JCBannerView class])];

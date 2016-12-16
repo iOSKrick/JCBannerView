@@ -63,7 +63,7 @@
         previousIndicator.transform = CGAffineTransformIdentity;
         previousIndicator.alpha = 0.6f;
         
-        currentIndicator.transform = CGAffineTransformScale(previousIndicator.transform, 2.0f, 2.0f);
+        currentIndicator.transform = CGAffineTransformScale(previousIndicator.transform, 1.6f, 1.6f);
         currentIndicator.alpha = 1.0f;
     }];
 }
