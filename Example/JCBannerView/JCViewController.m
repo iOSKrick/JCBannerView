@@ -29,6 +29,8 @@
                    ];
 
     [self.collectionView registerClass:[JCBannerView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:NSStringFromClass([JCBannerView class])];
+    
+    NSLog(@"\n\n🍀🍀🍀 The warnings in the console can be ignored, the actual use of lib will not exist. 🍀🍀🍀");
 }
 
 #pragma mark - UICollectionView 

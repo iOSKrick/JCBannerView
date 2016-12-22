@@ -8,7 +8,7 @@
 
 #import "JCBannerCell.h"
 #import "Masonry.h"
-#import <SDWebImage/UIImageView+WebCache.h>
+#import "UIImageView+WebCache.h"
 
 #define kImageLayerKey @"imageLayer"
 

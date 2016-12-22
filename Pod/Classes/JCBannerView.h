@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+#import "JCBannerCell.h"
+#import "JCPageControl.h"
+
 typedef void (^JCBannerViewBlock)(NSDictionary *data);
 
 IB_DESIGNABLE
