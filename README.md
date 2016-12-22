@@ -23,8 +23,7 @@ Installation with Carthage
 ```
 github "lijingcheng/JCBannerView" ~> 1.0.1
 ```
-need dependency SDWebImage '3.8.2'
-need dependency Masonry '1.0.2'
+need dependency SDWebImage(v3.8.2) and Masonry(v1.0.2)
 
 ## Usage
 
